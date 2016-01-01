@@ -1,1 +1,3 @@
-# exercism-solutions
+#Exercism submissions & tests
+
+Currently is javascript-track only
