@@ -1,23 +1,31 @@
-'use strict'
+'use strict;'
 
 
-function Hamming(x, y) {
-	this.x = x;
-	this.y = y;
-}
+var Hamming = function() {};
 
-Hamming.prototype.compute = function() {
+Hamming.prototype.compute = function(seq1, seq2) {
+	
+	if(seq1.length != seq2.length) {
+		throw("DNA strands must be of equal length.")
+	}
+
 	hammingcount = 0;
 	i = 0;
 
-	while (i < x.length) {
-		if (x.charAt(i) == y.charAt(i)) {
+	console.log(seq1);
+	console.log(seq2);
+
+	while (i < seq1.length) {
+		if (seq1.charAt(i) == seq2.charAt(i)) {
+			hammingcount += 0;
+		} else {
 			hammingcount += 1;
-		} else {}
+		}
 
 		i += 1;
 	}
 
-module.exports  = Hamming;
-
+	return hammingcount;
 }
+
+module.exports  = Hamming;
