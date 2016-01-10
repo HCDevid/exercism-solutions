@@ -1,16 +1,16 @@
 'use strict;'
 
 var Gigasecond = function (date) {
-	var msBump = Math.pow(10,9)*1000;
-
-	var initialMs = Date.parse(date);
-	var finalMs = initialMs + msBump;
-
-	this.milliseconds = finalMs;
+	this.initialDate = date;
 }
 
 Gigasecond.prototype.date = function() {
-	return Date.setTime(this.milliseconds)
+	var msBump = Math.pow(10,9)*1000;
+	var initialMs = Date.parse(this.initialDate);
+	var finalMs = initialMs + msBump;
+
+	return new Date(finalMs);
+
 }
 
 
